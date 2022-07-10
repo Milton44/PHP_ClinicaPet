@@ -25,7 +25,9 @@ if (isset($_POST['formCadastrarCliente'])) {
     $objCliente->setNome($_POST['nomeCliente']);
     $objCliente->setCPF($_POST['cpfCliente']);
     $objCliente->setEmail($_POST['emailCliente']);
-   
+    $objCliente->setCelular($_POST['celularCliente']);
+    $objCliente->setEndereco($_POST['enderecoCliente']);
+
     $objCliente->cadastrar();
 
 } else if (isset($_POST['formEditarCliente'])) {

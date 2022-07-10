@@ -8,6 +8,8 @@ class Cliente
     private $cpf;
     private $email;
     private $id;
+    private $celular;
+    private $endereco;
     private $utilidades;
 
     public $retornoBD;
@@ -58,14 +60,30 @@ class Cliente
         return $this->id = $id;
     }
 
+    public function setCelular($celular){
+        return $this->celular = $celular;
+    }
+
+    public function setEndereco($endereco){
+        return $this->endereco = $endereco;
+    }
+
+    public function getCelular(){
+        return $this->celular;
+    }
+
+    public function getEndereco(){
+        return $this->endereco;
+    }
+
     public function cadastrar()
     {
 
         if ($this->getCPF() != null) {
 
-            $interacaoMySql = $this->conexaoBD->prepare("INSERT INTO cliente (nome_cliente, email_cliente, cpf_cliente) 
-            VALUES (?, ?, ?)");
-            $interacaoMySql->bind_param('sss', $this->getNome(), $this->getEmail(), $this->getCPF());
+            $interacaoMySql = $this->conexaoBD->prepare("INSERT INTO cliente (nome_cliente, email_cliente, cpf_cliente, celular_cliente, endereco_cliente) 
+            VALUES (?, ?, ?, ?, ?)");
+            $interacaoMySql->bind_param('sssss', $this->getNome(), $this->getEmail(), $this->getCPF(), $this->getCelular(), $this->getEndereco());
             $retorno = $interacaoMySql->execute();
 
             $id = mysqli_insert_id($this->conexaoBD);
