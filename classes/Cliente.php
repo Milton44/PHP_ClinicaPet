@@ -114,6 +114,12 @@ class Cliente
         }
     }
 
+    public function selecionarPorNome($nome)
+    {
+        $sql = "select * from cliente where nome_cliente='$nome'";
+        $this->retornoBD = $this->conexaoBD->query($sql);
+    }
+
     public function selecionarPorId($id)
     {
         $sql = "select * from cliente where id_cliente=$id";

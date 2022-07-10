@@ -23,6 +23,18 @@ if (isset($_SESSION['administrador'])){
                     </form>
                 </div>
             </div>
+            <div class="collapse show" id="collapseCardExample">
+                <div class="card-body">
+                    <form method="POST" action="">
+                        <div class="mb-3">
+                            <label for="nome" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="nome-cliente" aria-describedby="nomeHelp" name="nomeCliente">
+                            <div id="nome" class="form-text"></div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -35,6 +47,8 @@ if (isset($_GET['id'])) {
     $objCliente->selecionarPorId($_GET['id']);
 } else if (isset($_POST['cpfCliente'])) {
     $objCliente->selecionarPorCPF($_POST['cpfCliente']);
+}else if(isset($_POST['nomeCliente'])){
+    $objCliente->selecionarPorNome($_POST['nomeCliente']);
 } else {
     $objCliente->selecionarClientes();
 }
