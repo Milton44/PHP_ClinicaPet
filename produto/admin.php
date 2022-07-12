@@ -1,6 +1,5 @@
 <?php
 session_start();
-$_SESSION["administrador"] = 'true';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -361,7 +360,7 @@ $_SESSION["administrador"] = 'true';
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" type="button" href="../include/logout.php">Logout</a>
                 </div>
             </div>
         </div>
@@ -381,5 +380,4 @@ $_SESSION["administrador"] = 'true';
     <script src="../js/principal.js"></script>
 
 </body>
-
 </html>

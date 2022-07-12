@@ -1,3 +1,6 @@
 <?php
-header("location: ../index.html");
+
+$_SESSION['administrador'] = false;
+header("location: ../produto/index.html");
+
 ?>

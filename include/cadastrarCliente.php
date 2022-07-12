@@ -1,5 +1,5 @@
 <?php
-if (isset($_SESSION['administrador'])){
+if (isset($_SESSION['administrador'])){     
 ?>
 
 <div class="container">
